@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import {getSmurfs} from "../actions";
+import AddingSmurf from "./AddingSmurf";
 
 const Smurf = (props) => {
     console.log(props)
