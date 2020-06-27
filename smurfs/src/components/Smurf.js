@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {connect} from "react-redux";
-import {getSmurfs} from "../actions";
+import {getSmurfs, addSmurf} from "../actions";
 import AddingSmurf from "./AddingSmurf";
 
 const Smurf = (props) => {
@@ -35,4 +35,4 @@ const mapStateToProps = (state) => {
 
 }
 
-export default connect(mapStateToProps, {getSmurfs})(Smurf);
+export default connect(mapStateToProps, {getSmurfs, addSmurf})(Smurf);
