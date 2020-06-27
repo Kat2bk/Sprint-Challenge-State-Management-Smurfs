@@ -34,6 +34,23 @@ export const reducer = (state = initialState, action) => {
                 isFetching: false,
                 error: action.payload
             };
+        case POST_SMURF_START:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case POST_SMURF_SUCCESS:
+            return {
+                ...state,
+                smurfs: action.payload,
+                isFetching: false
+            };
+        case POST_SMURF_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isFetching: false
+            }
         default:
         return state;
     }
