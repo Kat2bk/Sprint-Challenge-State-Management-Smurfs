@@ -11,9 +11,15 @@ useEffect(() => {
 }, [getData]);
 
 return (
+    <div>
     <div className="smurf-box">
-    <div className="smurfs">
-    
+    {props.smurfs.map((smurfs) => (
+        <div className="smurfs" key={smurfs.id}>
+        <h3>Name: {smurfs.name}</h3>
+        <h3>Age: {smurfs.age}</h3>
+        <h3>Height: {smurfs.height}</h3>
+        </div>
+    ))}
     </div>
     <button></button>
     </div>
