@@ -17,4 +17,19 @@ export const getSmurfs = () => (dispatch) => {
         console.log(response);
     dispatch({type: FETCHING_SMURF_SUCCESS, payload: response.data});
     })
+    .catch(error => {
+        console.log("unable to get data", error);
+        dispatch({type: FETCHING_SMURF_FAILURE, payload: error})
+    })
+}
+
+// add smurf
+
+export const addSmurf = (newSmurf) => (dispatch) => {
+    dispatch({type: POST_SMURF_START});
+    axios.post("http://localhost:3333/smurfs", newSmurf)
+    .then(response => {
+        console.log("posting", response);
+        dispatch({type: POST_SMURF_SUCCESS, payload: response.data});
+    });
 }
