@@ -22,7 +22,7 @@ return (
         </div>
     ))}
     </div>
-    <button></button>
+    <AddingSmurf addSmurf={props.addSmurf}/>
     </div>
 )
 }
