@@ -10,10 +10,11 @@ export const POST_SMURF_FAILURE = "POST_SMURF_FAILURE";
 
 // we need to get the data, create a function dispatch, and we need to add the data, create a function dispatch for that too
 
-export const getSmurfs = () = (dispatch) => {
+export const getSmurfs = () => (dispatch) => {
     dispatch({type: FETCHING_SMURF_START});
     axios.get("https://localhost:3333/smurfs")
-    .then((response) => {
+    .then(response => {
         console.log(response);
+    dispatch({type: FETCHING_SMURF_SUCCESS, payload: response.data});
     })
 }
